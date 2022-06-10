@@ -1,65 +1,84 @@
-#include<iostream>
+// W.A.P. to find out the area of triangle rectangle and square          Clg lab--> 03/03/2022
+
+#include<bits/stdc++.h>                      
 using namespace std;
 
-class triangle{
+class triange{
     private:
         float height;
         float base;
     public:
-        void setData(float height, float base){
+        void get_data(float height , float base){
             this->height=height;
             this->base=base;
         }
+
         float getAreaTri(){
             return 0.5*base*height;
         }
 };
 
-class rectangle{
+class rectange{
     private:
         float height;
         float base;
     public:
-        void setData(float height, float base){
+        void get_data(float height , float base){
             this->height=height;
             this->base=base;
-        } 
-        float getAreaRec(){
-            return height*base;
         }
 
+        float getAreaRec(){
+            return base*height;
+        }
 };
 
 class square{
     private:
         float side;
     public:
-        void setData(float side){
+        void get_data(float side){
             this->side=side;
-            
-        } 
+        }
+
         float getAreaSqu(){
             return side*side;
         }
-
 };
+
 
 int main()
 {
-    triangle obj1;
-    obj1.setData(2.2,3.4);
-    cout<<"Area of triangle is : "<<obj1.getAreaTri() <<endl;
+    float a,b,c,d,e;
+    float Tri_area, Rec_area, Squ_area;
 
-    rectangle obj2;
-    obj2.setData(3.4,6.7);
-    cout<<"Area of rectangle is : "<<obj2.getAreaRec() <<endl;
-    
-    square obj3;
-    obj3.setData(5.8);
-    cout<<"Area of square is : "<<obj3.getAreaSqu() <<endl;
+    cout<<"Enter the height of a triangle : "<<endl;
+    cin>>a;
+    cout<<"Enter the of base of a triangle : "<<endl;
+    cin>>b;
+    triange t1;
+    t1.get_data(a,b);
+    Tri_area=t1.getAreaTri();
+    cout<<"Area of Triangle is : "<<Tri_area<<endl;
+    cout<<endl;
+
+    cout<<"Enter the height of a rectange : "<<endl;
+    cin>>c;
+    cout<<"Enter the base of a rectange : "<<endl;
+    cin>>d;
+    rectange r1;
+    r1.get_data(c,d);
+    Rec_area=r1.getAreaRec();
+    cout<<"Area of Triangle is : "<<Rec_area<<endl;
+    cout<<endl;
 
 
+    cout<<"Enter the side of a square : "<<endl;
+    cin>>e;
+    square s1;
+    s1.get_data(e);
+    Squ_area=s1.getAreaSqu();
+    cout<<"Area of Triangle is : "<<Squ_area<<endl;
 
     return 0;
 }
-
